@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תספורסטו - עיצוב ושיקום שיער טבעי</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- כותרת ראשית -->
+    <header class="hero-header">
+        <div class="container">
+            <h1>תספורסטו</h1>
+            <p>מעצבת ושיקום שיער טבעי</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- אודות -->
+        <section class="about-section container fade-in">
+            <div class="image-wrapper">
+                <img src="https://i.ibb.co/LdLcxDnt/A8-DE6151-76-A5-4-A27-B433-70-ADE348-B08-A.png" alt="תספורסטו - מעצבת שיער" class="hero-image">
+            </div>
+            <div class="text-content">
+                <h2>נעים להכיר, אני פרסטו</h2>
+                <p class="subtitle">מעל 15 שנות ניסיון בתחום השיער הטבעי והמתולתל.</p>
+                <p>
+                    אני מספרת על <strong>שיער יבש בלבד</strong>, מתוך הקשבה למבנה הטבעי, לתנועה ולמרקם הייחודי של כל אחת. מבחינתי, תספורת טובה היא כזו שעוזרת לשיער להסתדר מעצמו, להרגיש קל יותר ולהישאר יפה גם הרבה אחרי שיוצאים מהסטודיו.
+                </p>
+                <p>
+                    דרך התבוננות, תשאול קצר ועבודה מדויקת, אני מתאימה את התספורת למה שהשיער באמת צריך. בלי מאבקים מול המראה, עם הכוונה להפחתת עומס מיותר מהשיער ועם כלים פשוטים שיעזרו לך להבין ולעבוד עם השיער גם בבית.
+                </p>
+                <p class="specialization">
+                    אני מתמחה בתלתלים, בשיקום שיער טבעי ובבניית תספורות שנשמרות לאורך זמן ומכבדות את התנועה הטבעית של השיער.
+                </p>
+                <p class="closing">אשמח להכיר גם אותך. 🌿</p>
+            </div>
+        </section>
+
+        <!-- כפתור אליפסה חדש להצגת הנהלים ותאריכים -->
+        <div class="info-button-container container fade-in" style="text-align: center; margin-bottom: 40px;">
+            <button class="ellipse-info-btn" onclick="openInfoModal()">
+                לפני התיאום, חשוב לקרוא בעיון כדי להבטיח חוויה נעימה ומדויקת
+            </button>
+        </div>
+
+        <!-- אזור קביעת תור -->
+        <section class="booking-section container fade-in">
+            <div class="booking-card">
+                <h3>קביעת תור מהירה</h3>
+                <p>מלאי את הפרטים והתור יישלח ישירות לוואטסאפ שלי</p>
+                
+                <form id="booking-form" onsubmit="sendBookingToWhatsApp(event)">
+                    <div class="form-group">
+                        <label for="client-name">שם מלא:</label>
+                        <input type="text" id="client-name" required placeholder="הכניסי את שמך">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client-date">תאריך מבוקש:</label>
+                        <input type="date" id="client-date" required onchange="checkDateAvailability()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client-time">שעה מועדפת:</label>
+                        <input type="time" id="client-time" required>
+                    </div>
+
+                    <div id="availability-status" class="availability-msg"></div>
+
+                    <button type="submit" id="submit-btn" class="cta-button booking-submit-btn">שליחת בקשת תור בוואטסאפ</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- כפתורי קשר וקהילה -->
+        <section class="cta-section container fade-in">
+            <div class="cta-card primary">
+                <h3>תיאום בוואטסאפ</h3>
+                <p>לשאלות נוספות והתלבטויות</p>
+                <a href="https://wa.me/972543075449" target="_blank" class="cta-button whatsapp-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="icon">
+                    054-3075449
+                </a>
+            </div>
+
+            <div class="cta-card secondary">
+                <div class="group-image-wrapper">
+                    <img src="https://i.ibb.co/RpFZXMjh/IMG-9628.jpg" alt="קבוצת עדכונים" class="small-circle-img">
+                </div>
+                <h3>לקבוצת העדכונים השקטה</h3>
+                <p>טיפים, השראה ועדכונים שוטפים</p>
+                <a href="https://chat.whatsapp.com/KgNU5NKTSRjAPGY7fSFfm3" target="_blank" class="cta-button group-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/FontAwesome_comment_alt.svg" alt="Updates Icon" class="icon">
+                    הצטרפי לקבוצה
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- תחתית האתר -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; כל הזכויות שמורות לתספורסטו.</p>
+            <button onclick="openAdminLogin()" class="admin-link-btn">כניסת מנהלת 🔐</button>
+        </div>
+    </footer>
+
+    <!-- חלון קופץ למידע ונהלים (החדש!) -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content info-modal-content">
+            <span class="close-btn" onclick="closeInfoModal()">&times;</span>
+            <div class="modal-text">
+                <h3>אוגוסט</h3>
+                <p>
+                    4.8 – אור עקיבא<br>
+                    5.8 – תל אביב<br>
+                    12.8 – אור עקיבא<br>
+                    13.8 – תל אביב<br>
+                    17.8 – אור עקיבא<br>
+                    18.8 – אור עקיבא<br>
+                    19.8 – הוד השרון<br>
+                    20.8 – תל אביב<br>
+                    25.8 – טבעון<br>
+                    26.8 – תל אביב<br>
+                    27.8 – ירושלים<br>
+                    31.8 – בית קשת
+                </p>
+
+                <h3>ספטמבר</h3>
+                <p>
+                    1.9 – אור עקיבא<br>
+                    2.9 – תל אביב<br>
+                    3.9 – אור עקיבא
+                </p>
+
+                <hr class="divider">
+
+                <h3>🌟 לפני התור:</h3>
+                <ul>
+                    <li>התספורת מתבצעת על שיער יבש בלבד.</li>
+                    <li>יש להגיע עם שיער נקי מחומרים (לא לאחר חפיפה וללא קוקו).</li>
+                    <li>בא לכם איזה סגנון ספציפי או יש משהו ממש לא בא לכם, הכי כיף שתביאו רפרנסים ותמונות.</li>
+                    <li>רוצים יעוץ והכוונה? תמיד טוב לצלם את המוצרים שאתם משתמשים בהם ולבוא עם כל הפרטים הללו מוכנים מראש על הפלאפון שלכם.</li>
+                </ul>
+
+                <hr class="divider">
+
+                <h3>💳 מחירון:</h3>
+                <ul>
+                    <li>תספורת שיער ארוך: 350 ₪</li>
+                    <li>תספורת שיער קצר/מכונה: 150 ₪</li>
+                    <li>תספורת קצר במספריים (מעל האוזן): 250 ₪</li>
+                    <li>תספורת ילדים: 120/180 ₪</li>
+                    <li>פוני/גלח: 100 ₪</li>
+                    <li>הדרכה לשיקום שיער: 280 ₪</li>
+                    <li>עיסוי וטיפול שיער: 480 ₪</li>
+                    <li>סרום לחיזוק השורש נגד נשירה: 180 ₪</li>
+                    <li>מסרק שמנים: 60 ₪</li>
+                    <li>מסרק עץ: 50 ₪</li>
+                </ul>
+                <p class="vat-note">המחירים כוללים מע״מ</p>
+
+                <hr class="divider">
+
+                <h3>⏰ מדיניות ביטולים ואיחורים:</h3>
+                <ul>
+                    <li>ביטול ביום התספורת יחויב ב-100 ₪.</li>
+                    <li>ביטול/דחייה אפשריים דרך הגוגל קלנדר האישי שלך.</li>
+                    <li>איחור של מעל 10 דקות עלול להוביל לביטול התור.</li>
+                </ul>
+
+                <hr class="divider">
+
+                <p class="modal-footer-text">🪞 מחכה לפגוש אותך ולהעניק לך חוויה ייחודית ומחמיאה! 💇‍♀️✨</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- חלון התחברות למנהלת -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAdminLogin()">&times;</span>
+            <h3>התחברות אזור ניהול</h3>
+            <div class="form-group">
+                <label>שם משתמש:</label>
+                <input type="text" id="admin-user" placeholder="הכנס שם משתמש">
+            </div>
+            <div class="form-group">
+                <label>סיסמה:</label>
+                <input type="password" id="admin-pass" placeholder="הכנס סיסמה">
+            </div>
+            <button onclick="loginAdmin()" class="cta-button booking-submit-btn">התחבר</button>
+        </div>
+    </div>
+
+    <!-- לוח ניהול זמינות -->
+    <div id="admin-dashboard" class="modal">
+        <div class="modal-content dashboard-content">
+            <span class="close-btn" onclick="closeAdminDashboard()">&times;</span>
+            <h3>לוח בקרה וניהול ימי עבודה</h3>
+            <p>בחר תאריך והגדר האם הוא פתוח לקביעת תורים או נעול:</p>
+            
+            <div class="form-group">
+                <label>בחר תאריך לניהול:</label>
+                <input type="date" id="manage-date">
+            </div>
+
+            <div class="admin-actions">
+                <button onclick="setDayStatus('open')" class="status-btn open-btn">פתח תאריך ✅</button>
+                <button onclick="setDayStatus('locked')" class="status-btn lock-btn">נעל תאריך ❌</button>
+            </div>
+
+            <div id="admin-feedback" class="admin-feedback"></div>
+            
+            <h4>תאריכים נעולים כרגע:</h4>
+            <ul id="locked-dates-list"></ul>
+
+            <button onclick="closeAdminDashboard()" class="cta-button group-button" style="margin-top: 20px;">סגור לוח בקרה</button>
+        </div>
+    </div>
+
+    <script>
+        // פונקציות לחלון מידע ונהלים החדש
+        function openInfoModal() {
+            document.getElementById('info-modal').style.display = 'flex';
+        }
+
+        function closeInfoModal() {
+            document.getElementById('info-modal').style.display = 'none';
+        }
+
+        // פונקציות קיימות לניהול תורים וקביעת תורים
+        function getLockedDates() {
+            const saved = localStorage.getItem('locked_dates');
+            return saved ? JSON.parse(saved) : [];
+        }
+
+        function sendBookingToWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('client-name').value;
+            const date = document.getElementById('client-date').value;
+            const time = document.getElementById('client-time').value;
+
+            const lockedDates = getLockedDates();
+            if (lockedDates.includes(date)) {
+                alert('התאריך הנבחר סגור כרגע לקביעת תורים. אנא בחרי תאריך אחר.');
+                return;
+            }
+
+            const message = `היי פרסטו, אשמח לקבוע תור!%0a*שם:* ${name}%0a*תאריך:* ${date}%0a*שעה:* ${time}`;
+            window.open(`https://wa.me/972543075449?text=${message}`, '_blank');
+        }
+
+        function checkDateAvailability() {
+            const date = document.getElementById('client-date').value;
+            const lockedDates = getLockedDates();
+            const statusDiv = document.getElementById('availability-status');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (lockedDates.includes(date)) {
+                statusDiv.innerHTML = "❌ התאריך הזה סגור ואינו זמין לקביעת תורים.";
+                statusDiv.style.color = "red";
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = "0.5";
+            } else {
+                statusDiv.innerHTML = "✅ התאריך פתוח לקביעת תורים!";
+                statusDiv.style.color = "green";
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = "1";
+            }
+        }
+
+        function openAdminLogin() {
+            document.getElementById('admin-modal').style.display = 'flex';
+        }
+
+        function closeAdminLogin() {
+            document.getElementById('admin-modal').style.display = 'none';
+        }
+
+        function loginAdmin() {
+            const user = document.getElementById('admin-user').value;
+            const pass = document.getElementById('admin-pass').value;
+
+            if (user === 'presto' && pass === '1234') {
+                closeAdminLogin();
+                document.getElementById('admin-dashboard').style.display = 'flex';
+                updateLockedList();
+            } else {
+                alert('שם משתמש או סיסמה שגויים!');
+            }
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('admin-dashboard').style.display = 'none';
+        }
+
+        function setDayStatus(status) {
+            const date = document.getElementById('manage-date').value;
+            if (!date) {
+                alert('אנא בחר תאריך תחילה');
+                return;
+            }
+
+            let lockedDates = getLockedDates();
+            const feedback = document.getElementById('admin-feedback');
+
+            if (status === 'locked') {
+                if (!lockedDates.includes(date)) {
+                    lockedDates.push(date);
+                }
+                feedback.innerHTML = `התאריך ${date} ננעל בהצלחה.`;
+                feedback.style.color = "red";
+            } else {
+                lockedDates = lockedDates.filter(d => d !== date);
+                feedback.innerHTML = `התאריך ${date} נפתח בהצלחה.`;
+                feedback.style.color = "green";
+            }
+
+            localStorage.setItem('locked_dates', JSON.stringify(lockedDates));
+            updateLockedList();
+        }
+
+        function updateLockedList() {
+            const lockedDates = getLockedDates();
+            const list = document.getElementById('locked-dates-list');
+            list.innerHTML = '';
+            if (lockedDates.length === 0) {
+                list.innerHTML = '<li>אין תאריכים נעולים כרגע</li>';
+                return;
+            }
+            lockedDates.forEach(d => {
+                const li = document.createElement('li');
+                li.textContent = d;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
